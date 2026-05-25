@@ -1,27 +1,12 @@
-# Dependencies
 node_modules/
+*.db
 __pycache__/
 *.pyc
-
-# Database (sera recréée sur Render)
-*.db
-
-# Build output
-backend/static/
-
-# IDE
 .vscode/
 .idea/
-
-# OS
 .DS_Store
 Thumbs.db
-
-# Env
-.env
 *.log
-
-# Rapport (trop lourd pour git)
 *.pdf
 *.wps
 rapport_extrait.txt

@@ -1,13 +1,9 @@
 services:
   - type: web
     name: hydronft
-    runtime: python
-    buildCommand: |
-      cd backend && pip install -r requirements.txt &&
-      cd ../frontend && npm install && npm run build
-    startCommand: cd backend && gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --threads 2
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.0
       - key: NODE_VERSION
         value: 20

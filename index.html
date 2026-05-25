@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="theme-color" content="#0a0e17"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="description" content="HydroNFT - Monitoring et controle du kit hydroponique NFT intelligent"/>
+  <title>HydroNFT - Systeme Hydroponique Intelligent</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>"/>
+</head>
+<body>
+<div id="app">
+
+  <!-- SPLASH -->
+  <div class="splash" id="splash">
+    <div class="splash__icon">🌿</div>
+    <div class="splash__title">HydroNFT</div>
+    <div class="splash__sub">Systeme NFT Intelligent</div>
+    <div class="splash__loader"></div>
+  </div>
+
+  <!-- ══ DASHBOARD ══ -->
+  <section class="screen active" id="screen-dashboard">
+    <div class="header">
+      <div class="header-title">
+        <span class="logo">🌿</span>
+        <div><h1>HydroNFT</h1><div class="header-sub">Systeme NFT Intelligent</div></div>
+      </div>
+    </div>
+    <div class="gauge-grid" id="gauge-grid"></div>
+    <div class="status-chips" id="status-chips"></div>
+    <div id="latest-alert"></div>
+  </section>
+
+  <!-- ══ CONTROLE ══ -->
+  <section class="screen" id="screen-control">
+    <h2 class="page-title">🎛️ Controle Systeme</h2>
+    <div class="mode-toggle" id="mode-toggle"></div>
+    <div id="control-toggles"></div>
+    <div class="slider-section" id="slider-section"></div>
+  </section>
+
+  <!-- ══ CULTURES ══ -->
+  <section class="screen" id="screen-cultures">
+    <h2 class="page-title">🌱 Mes Cultures</h2>
+    <div id="cultures-list"></div>
+  </section>
+
+  <!-- ══ HISTORIQUE ══ -->
+  <section class="screen" id="screen-history">
+    <h2 class="page-title">📈 Historique</h2>
+    <div class="chart-tabs" id="chart-tabs"></div>
+    <div class="chart-container"><canvas id="historyChart"></canvas></div>
+    <div class="stats-grid" id="stats-grid"></div>
+  </section>
+
+  <!-- ══ ALERTES ══ -->
+  <section class="screen" id="screen-alerts">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+      <h2 class="page-title" style="margin:0;">🔔 Alertes <span class="badge" id="alert-badge" style="display:none;"></span></h2>
+      <button class="ack-all-btn" id="ack-all-btn" style="display:none;" onclick="ackAllAlerts()">Tout acquitter</button>
+    </div>
+    <div id="alerts-list"></div>
+  </section>
+
+  <!-- BOTTOM NAV -->
+  <nav class="navbar" id="navbar" style="display:none;">
+    <div class="nav-item active" data-nav="dashboard" onclick="navigateTo('dashboard')">
+      <span class="nav-icon">🌿</span><span>Dashboard</span>
+    </div>
+    <div class="nav-item" data-nav="control" onclick="navigateTo('control')">
+      <span class="nav-icon">🎛️</span><span>Controle</span>
+    </div>
+    <div class="nav-item" data-nav="cultures" onclick="navigateTo('cultures')">
+      <span class="nav-icon">🌱</span><span>Cultures</span>
+    </div>
+    <div class="nav-item" data-nav="history" onclick="navigateTo('history')">
+      <span class="nav-icon">📈</span><span>Historique</span>
+    </div>
+    <div class="nav-item" data-nav="alerts" onclick="navigateTo('alerts')">
+      <span class="nav-icon">🔔</span><span id="nav-alert-badge"></span><span>Alertes</span>
+    </div>
+  </nav>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
