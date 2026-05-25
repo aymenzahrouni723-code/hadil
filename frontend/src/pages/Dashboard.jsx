@@ -35,7 +35,25 @@ export default function Dashboard() {
   if (!data) {
     return (
       <div className="page">
-        <div className="loading"><div className="spinner"></div></div>
+        <div style={{ textAlign: 'center', paddingTop: '20vh' }}>
+          <div style={{ fontSize: '3rem', marginBottom: '16px' }}>🌿</div>
+          <h1 style={{ 
+            fontFamily: 'var(--font-heading)', 
+            fontSize: '1.8rem', 
+            fontWeight: 800,
+            background: 'linear-gradient(135deg, #2ECC71, #1ABC9C)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            marginBottom: '8px'
+          }}>HydroNFT</h1>
+          <div className="loading"><div className="spinner"></div></div>
+          <p style={{ color: 'var(--text-tertiary)', fontSize: '0.82rem', marginTop: '16px' }}>
+            Connexion aux capteurs ESP32...
+          </p>
+          <p style={{ color: 'var(--text-muted)', fontSize: '0.7rem', marginTop: '8px' }}>
+            Le premier chargement peut prendre 30s
+          </p>
+        </div>
       </div>
     );
   }
