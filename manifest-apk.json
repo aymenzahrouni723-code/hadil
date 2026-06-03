@@ -1,0 +1,17 @@
+{
+  "name": "HydroNFT - Système Hydroponique Intelligent",
+  "short_name": "HydroNFT",
+  "description": "Application de monitoring et contrôle du kit hydroponique NFT intelligent pour la culture urbaine",
+  "start_url": "https://hydronft-1.onrender.com/",
+  "scope": "https://hydronft-1.onrender.com/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0e17",
+  "theme_color": "#0a0e17",
+  "lang": "fr",
+  "icons": [
+    { "src": "https://raw.githubusercontent.com/aymenzahrouni723-code/hadil/main/icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "https://raw.githubusercontent.com/aymenzahrouni723-code/hadil/main/icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "https://raw.githubusercontent.com/aymenzahrouni723-code/hadil/main/icons/icon-512x512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
