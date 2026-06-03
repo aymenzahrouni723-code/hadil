@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
   <meta name="theme-color" content="#0a0e17"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="description" content="HydroNFT - Monitoring et controle du kit hydroponique NFT intelligent"/>
   <title>HydroNFT - Systeme Hydroponique Intelligent</title>
+  <link rel="manifest" href="/manifest.json"/>
   <link rel="stylesheet" href="styles.css"/>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>"/>
+  <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192x192.png"/>
+  <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png"/>
 </head>
 <body>
 <div id="app">
@@ -88,5 +91,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
 <script src="app.js"></script>
+<script>
+  // Enregistrer le Service Worker pour le mode PWA/APK
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('[PWA] Service Worker enregistre:', reg.scope))
+        .catch(err => console.log('[PWA] Erreur SW:', err));
+    });
+  }
+</script>
 </body>
 </html>
